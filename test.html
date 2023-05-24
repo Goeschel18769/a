@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KodgePodge - Das K-Protokoll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <h1 class="title">Willkommen bei KodgePodge</h1>
+
+    <a href="http://www.tanzbuero.net/de/files/2016/03/Antrag_auf_Abschiebung.pdf" target="_blank">
+        <button class="knöpfle1">Tu etwas Gutes</button>
+    </a>
+
+    <a href="/Wamnian/index.html" target="_blank">
+        <button class="knöpfle2">FickTürke</button>
+    </a>
+
+    <h2 class="title">1. Kilian nimmt Verfolgung auf:</h2>
+    <ul>
+        <li class="list-item">Alternative Route nehmen</li>
+        <li class="list-item">Taktisches Aufteilen</li>
+        <li class="list-item">Irgendwo verstecken, bis die Luft rein ist</li>
+    </ul>
+
+    <h2 class="title">2. Kilian will sich zu einem setzen:</h2>
+    <ul>
+        <li class="list-item">An sicheren Ort setzen</li>
+        <li class="list-item">Sitz mit Rucksack besetzen (falls er stehen bleibt, so tun, als ob man ihn nicht
+            bemerkt.)
+        </li>
+        <li class="list-item">Falls in Zug, beim Zugwechsel Vorgang wiederholen</li>
+    </ul>
+
+    <h2 class="title">3. Kilian will in einer Gruppenarbeit mit machen:</h2>
+    <ul>
+        <li class="list-item">Sagen, dass Gruppe voll ist</li>
+        <li class="list-item">Eine andere Gruppe vorschlagen, welche au noch Personen benötigen</li>
+        <li class="list-item">Wamnian beschwören</li>
+    </ul>
+    <h1>Kommentare</h1>
+
+    <div id="comments">
+        <!-- Hier werden die Kommentare angezeigt -->
+    </div>
+
+    <h2>Neuen Kommentar hinzufügen</h2>
+    <form id="comment-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="comment">Kommentar:</label>
+        <textarea class="kommi" id="comment" required></textarea><br>
+
+        <button class="kommi" type="submit">Kommentar absenden</button>
+
+    </form>
+
+    <script>
+        document.getElementById("comment-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Verhindert das automatische Neuladen der Seite nach dem Absenden des Formulars
+
+            var name = document.getElementById("name").value;
+            var comment = document.getElementById("comment").value;
+
+            // Erzeuge ein neues Kommentar-Element
+            var commentElement = document.createElement("div");
+            commentElement.innerHTML = "<strong>" + name + "</strong>: " + comment;
+
+            // Füge das Kommentar-Element zum Container hinzu
+            var commentsContainer = document.getElementById("comments");
+            commentsContainer.appendChild(commentElement);
+
+            // Setze die Eingabefelder zurück
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
+        });
+    </script>
+    <video autoplay loop class="eisenhutsong">
+        <source src="Unbenannter Song.mp3" </video>
+
+        <footer class="footer">
+            <p>&copy;GuschelGaschelGergel GmbH FickKilian.org und Beneger AG </p>
+        </footer>
+</body>
+
+</html>
